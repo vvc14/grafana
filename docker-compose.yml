@@ -10,6 +10,8 @@ services:
       container_name: prometheus
       ports:
         - "9090:9090"
+      volumes:
+        - ./prometheus.yml:/etc/prometheus/prometheus.yml
       depends_on:
         - fastapi-app
     grafana:
@@ -21,5 +23,5 @@ services:
         - prometheus
 
 volumes:
-  promtheus_data: 
+  prometheus_data: 
   grafana_data: 
